@@ -1,9 +1,9 @@
 class ETL
     def self.transform old
-        new = Hash.new
+        out = Hash.new
         old.each do |key, value|
-            value.map { |x| new[x.downcase] = key}
+            value.each { |x| out[x.downcase] = key}
         end
-        new
+        out
     end
 end
